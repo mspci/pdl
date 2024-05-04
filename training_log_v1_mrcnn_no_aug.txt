@@ -1,0 +1,275 @@
+2024-05-04 19:30:40.261048: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cudart64_101.dll'; dlerror: cudart64_101.dll not found
+2024-05-04 19:30:40.261191: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2024-05-04 19:31:41.597287: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library nvcuda.dll
+2024-05-04 19:31:42.361054: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:04:00.0 name: GeForce 820M computeCapability: 2.1
+coreClock: 1.25GHz coreCount: 2 deviceMemorySize: 2.00GiB deviceMemoryBandwidth: 13.41GiB/s
+2024-05-04 19:31:42.362985: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cudart64_101.dll'; dlerror: cudart64_101.dll not found
+2024-05-04 19:31:42.364692: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cublas64_10.dll'; dlerror: cublas64_10.dll not found
+2024-05-04 19:31:42.366384: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2024-05-04 19:31:42.459466: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_10.dll
+2024-05-04 19:31:42.461420: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cusolver64_10.dll'; dlerror: cusolver64_10.dll not found
+2024-05-04 19:31:42.463125: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cusparse64_10.dll'; dlerror: cusparse64_10.dll not found
+2024-05-04 19:31:42.464808: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cudnn64_7.dll'; dlerror: cudnn64_7.dll not found
+2024-05-04 19:31:42.464835: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1598] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2024-05-04 19:31:42.465459: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2024-05-04 19:31:42.479853: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1ac94efaf90 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2024-05-04 19:31:42.479923: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2024-05-04 19:31:42.480187: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102] Device interconnect StreamExecutor with strength 1 edge matrix:
+2024-05-04 19:31:42.480238: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1108]      
+2024-05-04 19:31:53.143965: I tensorflow/core/profiler/lib/profiler_session.cc:159] Profiler session started.
+2024-05-04 19:31:53.144017: I tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1363] Profiler found 1 GPUs
+2024-05-04 19:31:53.145364: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cupti64_101.dll'; dlerror: cupti64_101.dll not found
+2024-05-04 19:31:53.145397: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1408] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+2024-05-04 19:31:53.145409: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1447] function cupti_interface_->ActivityRegisterCallbacks( AllocCuptiActivityBuffer, FreeCuptiActivityBuffer)failed with error CUPTI could not be loaded or symbol could not be found.
+2024-05-04 19:31:53.145432: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1430] function cupti_interface_->EnableCallback( 0 , subscriber_, CUPTI_CB_DOMAIN_DRIVER_API, cbid)failed with error CUPTI could not be loaded or symbol could not be found.
+Using TensorFlow backend.
+C:\Users\Wint3\anaconda3\envs\maskrcnn_p3711\lib\site-packages\tensorflow\python\framework\indexed_slices.py:434: UserWarning: Converting sparse IndexedSlices to a dense Tensor of unknown shape. This may consume a large amount of memory.
+  "Converting sparse IndexedSlices to a dense Tensor of unknown shape. "
+WARNING:tensorflow:Model failed to serialize as JSON. Ignoring... can't pickle _thread.RLock objects
+2024-05-04 19:32:38.783689: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 603979776 exceeds 10% of free system memory.
+2024-05-04 19:32:44.669935: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 603979776 exceeds 10% of free system memory.
+2024-05-04 19:33:22.075938: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 603979776 exceeds 10% of free system memory.
+2024-05-04 19:33:23.249727: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 603979776 exceeds 10% of free system memory.
+Train: 455
+Test: 195
+
+Configurations:
+BACKBONE                       resnet50
+BACKBONE_STRIDES               [4, 8, 16, 32, 64]
+BATCH_SIZE                     2
+BBOX_STD_DEV                   [0.1 0.1 0.2 0.2]
+COMPUTE_BACKBONE_SHAPE         None
+DETECTION_MAX_INSTANCES        100
+DETECTION_MIN_CONFIDENCE       0.7
+DETECTION_NMS_THRESHOLD        0.3
+FPN_CLASSIF_FC_LAYERS_SIZE     1024
+GPU_COUNT                      1
+GRADIENT_CLIP_NORM             5.0
+IMAGES_PER_GPU                 2
+IMAGE_CHANNEL_COUNT            3
+IMAGE_MAX_DIM                  1024
+IMAGE_META_SIZE                23
+IMAGE_MIN_DIM                  800
+IMAGE_MIN_SCALE                0
+IMAGE_RESIZE_MODE              square
+IMAGE_SHAPE                    [1024 1024    3]
+LEARNING_MOMENTUM              0.9
+LEARNING_RATE                  0.001
+LOSS_WEIGHTS                   {'rpn_class_loss': 1.0, 'rpn_bbox_loss': 1.0, 'mrcnn_class_loss': 1.0, 'mrcnn_bbox_loss': 1.0, 'mrcnn_mask_loss': 1.0}
+MASK_POOL_SIZE                 14
+MASK_SHAPE                     [28, 28]
+MAX_GT_INSTANCES               100
+MEAN_PIXEL                     [123.7 116.8 103.9]
+MINI_MASK_SHAPE                (56, 56)
+NAME                           remote_sensing_cfg
+NUM_CLASSES                    11
+POOL_SIZE                      7
+POST_NMS_ROIS_INFERENCE        1000
+POST_NMS_ROIS_TRAINING         2000
+PRE_NMS_LIMIT                  6000
+ROI_POSITIVE_RATIO             0.33
+RPN_ANCHOR_RATIOS              [0.5, 1, 2]
+RPN_ANCHOR_SCALES              (32, 64, 128, 256, 512)
+RPN_ANCHOR_STRIDE              1
+RPN_BBOX_STD_DEV               [0.1 0.1 0.2 0.2]
+RPN_NMS_THRESHOLD              0.7
+RPN_TRAIN_ANCHORS_PER_IMAGE    256
+STEPS_PER_EPOCH                100
+TOP_DOWN_PYRAMID_SIZE          256
+TRAIN_BN                       False
+TRAIN_ROIS_PER_IMAGE           200
+USE_MINI_MASK                  True
+USE_RPN_ROIS                   True
+VALIDATION_STEPS               50
+WEIGHT_DECAY                   0.0001
+
+
+
+Starting at epoch 0. LR=0.001
+
+Checkpoint Path: /logdir/train\mask_rcnn_remote_sensing_cfg_{epoch:04d}.h5
+Selecting layers to train
+fpn_c5p5               (Conv2D)
+fpn_c4p4               (Conv2D)
+fpn_c3p3               (Conv2D)
+fpn_c2p2               (Conv2D)
+fpn_p5                 (Conv2D)
+fpn_p2                 (Conv2D)
+fpn_p3                 (Conv2D)
+fpn_p4                 (Conv2D)
+In model:  rpn_model
+    rpn_conv_shared        (Conv2D)
+    rpn_class_raw          (Conv2D)
+    rpn_bbox_pred          (Conv2D)
+mrcnn_mask_conv1       (TimeDistributed)
+mrcnn_mask_bn1         (TimeDistributed)
+mrcnn_mask_conv2       (TimeDistributed)
+mrcnn_mask_bn2         (TimeDistributed)
+mrcnn_class_conv1      (TimeDistributed)
+mrcnn_class_bn1        (TimeDistributed)
+mrcnn_mask_conv3       (TimeDistributed)
+mrcnn_mask_bn3         (TimeDistributed)
+mrcnn_class_conv2      (TimeDistributed)
+mrcnn_class_bn2        (TimeDistributed)
+mrcnn_mask_conv4       (TimeDistributed)
+mrcnn_mask_bn4         (TimeDistributed)
+mrcnn_bbox_fc          (TimeDistributed)
+mrcnn_mask_deconv      (TimeDistributed)
+mrcnn_class_logits     (TimeDistributed)
+mrcnn_mask             (TimeDistributed)
+Epoch 1/20
+
+  1/100 [..............................] - ETA: 2:02:08 - loss: 5.64622024-05-04 19:33:34.980892: I tensorflow/core/profiler/lib/profiler_session.cc:159] Profiler session started.
+2024-05-04 19:33:35.274792: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1408] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+2024-05-04 19:33:35.317212: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1447] function cupti_interface_->ActivityRegisterCallbacks( AllocCuptiActivityBuffer, FreeCuptiActivityBuffer)failed with error CUPTI could not be loaded or symbol could not be found.
+2024-05-04 19:33:58.206556: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 603979776 exceeds 10% of free system memory.
+
+  2/100 [..............................] - ETA: 2:11:51 - loss: 5.31412024-05-04 19:35:05.915099: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1430] function cupti_interface_->EnableCallback( 0 , subscriber_, CUPTI_CB_DOMAIN_DRIVER_API, cbid)failed with error CUPTI could not be loaded or symbol could not be found.
+2024-05-04 19:35:06.746795: I tensorflow/core/profiler/internal/gpu/device_tracer.cc:216]  GpuTracer has collected 0 callback api events and 0 activity events.
+2024-05-04 19:35:10.007397: I tensorflow/core/profiler/rpc/client/save_profile.cc:168] Creating directory: /logdir/train\train\plugins\profile\2024_05_04_18_35_08
+2024-05-04 19:35:10.267524: I tensorflow/core/profiler/rpc/client/save_profile.cc:174] Dumped gzipped tool data for trace.json.gz to /logdir/train\train\plugins\profile\2024_05_04_18_35_08\DESKTOP-U2415Q3.trace.json.gz
+2024-05-04 19:35:10.477307: I tensorflow/core/profiler/utils/event_span.cc:288] Generation of step-events took 0 ms
+
+2024-05-04 19:35:11.391898: I tensorflow/python/profiler/internal/profiler_wrapper.cc:87] Creating directory: /logdir/train\train\plugins\profile\2024_05_04_18_35_08Dumped tool data for overview_page.pb to /logdir/train\train\plugins\profile\2024_05_04_18_35_08\DESKTOP-U2415Q3.overview_page.pb
+Dumped tool data for input_pipeline.pb to /logdir/train\train\plugins\profile\2024_05_04_18_35_08\DESKTOP-U2415Q3.input_pipeline.pb
+Dumped tool data for tensorflow_stats.pb to /logdir/train\train\plugins\profile\2024_05_04_18_35_08\DESKTOP-U2415Q3.tensorflow_stats.pb
+Dumped tool data for kernel_stats.pb to /logdir/train\train\plugins\profile\2024_05_04_18_35_08\DESKTOP-U2415Q3.kernel_stats.pb
+
+
+  3/100 [..............................] - ETA: 2:15:20 - loss: 4.8922
+  4/100 [>.............................] - ETA: 2:08:49 - loss: 4.4210
+  5/100 [>.............................] - ETA: 2:06:04 - loss: 4.2031
+  6/100 [>.............................] - ETA: 2:24:15 - loss: 4.0797
+  7/100 [=>............................] - ETA: 2:35:20 - loss: 3.8833
+  8/100 [=>............................] - ETA: 2:38:19 - loss: 3.8060
+  9/100 [=>............................] - ETA: 2:33:17 - loss: 3.7222
+ 10/100 [==>...........................] - ETA: 2:27:25 - loss: 3.6393
+ 11/100 [==>...........................] - ETA: 2:22:44 - loss: 3.6013
+ 12/100 [==>...........................] - ETA: 2:18:48 - loss: 3.5146
+ 13/100 [==>...........................] - ETA: 2:14:22 - loss: 3.4058
+ 14/100 [===>..........................] - ETA: 2:10:59 - loss: 3.4142
+ 15/100 [===>..........................] - ETA: 2:07:02 - loss: 3.3243
+ 16/100 [===>..........................] - ETA: 2:03:33 - loss: 3.2174
+ 17/100 [====>.........................] - ETA: 2:00:19 - loss: 3.1689
+ 18/100 [====>.........................] - ETA: 1:57:26 - loss: 3.1504
+ 19/100 [====>.........................] - ETA: 1:54:35 - loss: 3.1253
+ 20/100 [=====>........................] - ETA: 1:51:52 - loss: 3.0766
+ 21/100 [=====>........................] - ETA: 1:49:41 - loss: 3.0463
+ 22/100 [=====>........................] - ETA: 1:47:35 - loss: 3.0392
+ 23/100 [=====>........................] - ETA: 1:45:24 - loss: 3.0069
+ 24/100 [======>.......................] - ETA: 1:43:22 - loss: 2.9772
+ 25/100 [======>.......................] - ETA: 1:41:20 - loss: 2.9348
+ 26/100 [======>.......................] - ETA: 1:39:23 - loss: 2.9163
+ 27/100 [=======>......................] - ETA: 1:37:35 - loss: 2.9045
+ 28/100 [=======>......................] - ETA: 1:35:42 - loss: 2.8717
+ 29/100 [=======>......................] - ETA: 1:33:53 - loss: 2.8473
+ 30/100 [========>.....................] - ETA: 1:32:07 - loss: 2.8395
+ 31/100 [========>.....................] - ETA: 1:30:23 - loss: 2.8109
+ 32/100 [========>.....................] - ETA: 1:28:41 - loss: 2.7867
+ 33/100 [========>.....................] - ETA: 1:27:02 - loss: 2.7640
+ 34/100 [=========>....................] - ETA: 1:25:25 - loss: 2.7405
+ 35/100 [=========>....................] - ETA: 1:23:49 - loss: 2.7346
+ 36/100 [=========>....................] - ETA: 1:22:15 - loss: 2.7264
+ 37/100 [==========>...................] - ETA: 1:20:40 - loss: 2.6964
+ 38/100 [==========>...................] - ETA: 1:19:09 - loss: 2.6757
+ 39/100 [==========>...................] - ETA: 1:17:38 - loss: 2.6543
+ 40/100 [===========>..................] - ETA: 1:16:10 - loss: 2.6430
+ 41/100 [===========>..................] - ETA: 1:14:41 - loss: 2.6232
+ 42/100 [===========>..................] - ETA: 1:13:15 - loss: 2.6016
+ 43/100 [===========>..................] - ETA: 1:11:44 - loss: 2.5803
+ 44/100 [============>.................] - ETA: 1:10:13 - loss: 2.5571
+ 45/100 [============>.................] - ETA: 1:08:44 - loss: 2.5419
+ 46/100 [============>.................] - ETA: 1:07:18 - loss: 2.5254
+ 47/100 [=============>................] - ETA: 1:06:00 - loss: 2.5211
+ 48/100 [=============>................] - ETA: 1:04:38 - loss: 2.5075
+ 49/100 [=============>................] - ETA: 1:03:13 - loss: 2.4905
+ 50/100 [==============>...............] - ETA: 1:01:48 - loss: 2.4799
+ 51/100 [==============>...............] - ETA: 1:00:55 - loss: 2.4585
+ 52/100 [==============>...............] - ETA: 59:42 - loss: 2.4588  
+ 53/100 [==============>...............] - ETA: 58:17 - loss: 2.4538
+ 54/100 [===============>..............] - ETA: 57:09 - loss: 2.4478
+ 55/100 [===============>..............] - ETA: 55:50 - loss: 2.4404
+ 56/100 [===============>..............] - ETA: 54:32 - loss: 2.4215
+ 57/100 [================>.............] - ETA: 53:23 - loss: 2.4121
+ 58/100 [================>.............] - ETA: 52:09 - loss: 2.4084
+ 59/100 [================>.............] - ETA: 50:51 - loss: 2.3976
+ 60/100 [=================>............] - ETA: 49:32 - loss: 2.3838
+ 61/100 [=================>............] - ETA: 48:10 - loss: 2.3803
+ 62/100 [=================>............] - ETA: 46:48 - loss: 2.3700
+ 63/100 [=================>............] - ETA: 45:28 - loss: 2.3601
+ 64/100 [==================>...........] - ETA: 44:09 - loss: 2.3613
+ 65/100 [==================>...........] - ETA: 42:53 - loss: 2.3518
+ 66/100 [==================>...........] - ETA: 41:34 - loss: 2.3428
+ 67/100 [===================>..........] - ETA: 40:15 - loss: 2.3433
+ 68/100 [===================>..........] - ETA: 38:59 - loss: 2.3298
+ 69/100 [===================>..........] - ETA: 37:45 - loss: 2.3177
+ 70/100 [====================>.........] - ETA: 36:30 - loss: 2.3109
+ 71/100 [====================>.........] - ETA: 35:27 - loss: 2.2978
+ 72/100 [====================>.........] - ETA: 34:22 - loss: 2.3107
+ 73/100 [====================>.........] - ETA: 33:15 - loss: 2.3021
+ 74/100 [=====================>........] - ETA: 32:04 - loss: 2.2860
+ 75/100 [=====================>........] - ETA: 30:51 - loss: 2.2767
+ 76/100 [=====================>........] - ETA: 29:37 - loss: 2.2662
+ 77/100 [======================>.......] - ETA: 28:21 - loss: 2.2678
+ 78/100 [======================>.......] - ETA: 27:06 - loss: 2.2575
+ 79/100 [======================>.......] - ETA: 25:53 - loss: 2.2549
+ 80/100 [=======================>......] - ETA: 24:40 - loss: 2.2474
+ 81/100 [=======================>......] - ETA: 23:27 - loss: 2.2452
+ 82/100 [=======================>......] - ETA: 22:11 - loss: 2.2433
+ 83/100 [=======================>......] - ETA: 20:55 - loss: 2.2331
+ 84/100 [========================>.....] - ETA: 19:40 - loss: 2.2277
+ 85/100 [========================>.....] - ETA: 18:24 - loss: 2.2171
+ 86/100 [========================>.....] - ETA: 17:09 - loss: 2.2089
+ 87/100 [=========================>....] - ETA: 15:53 - loss: 2.2006
+ 88/100 [=========================>....] - ETA: 14:38 - loss: 2.2005
+ 89/100 [=========================>....] - ETA: 13:24 - loss: 2.1942
+ 90/100 [==========================>...] - ETA: 12:09 - loss: 2.1853
+ 91/100 [==========================>...] - ETA: 10:55 - loss: 2.1830
+ 92/100 [==========================>...] - ETA: 9:41 - loss: 2.1759 
+ 93/100 [==========================>...] - ETA: 8:28 - loss: 2.1720
+ 94/100 [===========================>..] - ETA: 7:15 - loss: 2.1656
+ 95/100 [===========================>..] - ETA: 6:01 - loss: 2.1586
+ 96/100 [===========================>..] - ETA: 4:49 - loss: 2.1629
+ 97/100 [============================>.] - ETA: 3:36 - loss: 2.1560
+ 98/100 [============================>.] - ETA: 2:24 - loss: 2.1557
+ 99/100 [============================>.] - ETA: 1:11 - loss: 2.1492
+100/100 [==============================] - 8044s 80s/step - loss: 2.1440 - val_loss: 1.7658
+Epoch 2/20
+
+  1/100 [..............................] - ETA: 1:31:37 - loss: 1.5107
+  2/100 [..............................] - ETA: 1:32:45 - loss: 1.5992
+  3/100 [..............................] - ETA: 1:31:50 - loss: 1.5049
+  4/100 [>.............................] - ETA: 1:30:52 - loss: 1.5874
+  5/100 [>.............................] - ETA: 1:30:23 - loss: 1.6789
+  6/100 [>.............................] - ETA: 1:29:28 - loss: 1.7220
+  7/100 [=>............................] - ETA: 1:28:25 - loss: 1.7451
+  8/100 [=>............................] - ETA: 1:27:52 - loss: 1.6813
+  9/100 [=>............................] - ETA: 1:27:17 - loss: 1.6723
+ 10/100 [==>...........................] - ETA: 1:27:06 - loss: 1.6838Traceback (most recent call last):
+  File "remote_sensing_training.py", line 166, in <module>
+    layers="heads",
+  File "C:\Users\Wint3\Documents\00\ESPRIT\sem8\Deep-Learning\DL-Projet\mask-rcnn\pdl\mrcnn\model.py", line 2385, in train
+    use_multiprocessing=True,
+  File "C:\Users\Wint3\anaconda3\envs\maskrcnn_p3711\lib\site-packages\keras\legacy\interfaces.py", line 91, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Wint3\anaconda3\envs\maskrcnn_p3711\lib\site-packages\keras\engine\training.py", line 1732, in fit_generator
+    initial_epoch=initial_epoch)
+  File "C:\Users\Wint3\anaconda3\envs\maskrcnn_p3711\lib\site-packages\keras\engine\training_generator.py", line 220, in fit_generator
+    reset_metrics=False)
+  File "C:\Users\Wint3\anaconda3\envs\maskrcnn_p3711\lib\site-packages\keras\engine\training.py", line 1514, in train_on_batch
+    outputs = self.train_function(ins)
+  File "C:\Users\Wint3\anaconda3\envs\maskrcnn_p3711\lib\site-packages\tensorflow\python\keras\backend.py", line 3792, in __call__
+    outputs = self._graph_fn(*converted_inputs)
+  File "C:\Users\Wint3\anaconda3\envs\maskrcnn_p3711\lib\site-packages\tensorflow\python\eager\function.py", line 1605, in __call__
+    return self._call_impl(args, kwargs)
+  File "C:\Users\Wint3\anaconda3\envs\maskrcnn_p3711\lib\site-packages\tensorflow\python\eager\function.py", line 1645, in _call_impl
+    return self._call_flat(args, self.captured_inputs, cancellation_manager)
+  File "C:\Users\Wint3\anaconda3\envs\maskrcnn_p3711\lib\site-packages\tensorflow\python\eager\function.py", line 1746, in _call_flat
+    ctx, args, cancellation_manager=cancellation_manager))
+  File "C:\Users\Wint3\anaconda3\envs\maskrcnn_p3711\lib\site-packages\tensorflow\python\eager\function.py", line 598, in call
+    ctx=ctx)
+  File "C:\Users\Wint3\anaconda3\envs\maskrcnn_p3711\lib\site-packages\tensorflow\python\eager\execute.py", line 60, in quick_execute
+    inputs, attrs, num_outputs)
+KeyboardInterrupt
