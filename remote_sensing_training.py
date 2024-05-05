@@ -126,7 +126,7 @@ class RemoteSensingConfig(mrcnn.config.Config):
     # 10 classes + background
     NUM_CLASSES = 11
     # number of training steps per epoch
-    STEPS_PER_EPOCH = 100
+    STEPS_PER_EPOCH = 35
 
 
 # Train

@@ -41,8 +41,8 @@ model = mrcnn.model.MaskRCNN(
     # mode="inference", config=PredictionConfig(), model_dir=os.getcwd()
     mode="inference",
     config=PredictionConfig(),
-    model_dir="./rs_model",
-    # model_dir="./",
+    # model_dir="./rs_model",
+    model_dir="./",
 )
 
 # Load the weights into the model.
