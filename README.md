@@ -1,6 +1,6 @@
-# Program Setup Guide
+# Setup Guide
 
-## Setup Steps:
+## Environment Setup :
 
 1. Open an **Anaconda prompt**.
 
@@ -57,7 +57,7 @@ Download the pre-trained weights from the following link and place them in the `
 
 [Download Pre-trained Weights](https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5)
 
-## Training the Program:
+## Training the Model:
 
 To perform training, navigate to the repository directory 'pdl' in the terminal and run the following command:
 
