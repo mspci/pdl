@@ -173,7 +173,7 @@ model.train(
             imgaug.augmenters.Fliplr(0.4),
             imgaug.augmenters.Flipud(0.3),
             imgaug.augmenters.Affine(rotate=(-45, 45)),
-            imgaug.augmenters.Affine(scale=(0.5, 1.5)),
+            # imgaug.augmenters.Affine(scale=(0.5, 1.5)),
             imgaug.augmenters.Affine(translate_percent=(-0.2, 0.2)),
             # imgaug.augmenters.Affine(shear=(-16, 16)),
             # imgaug.augmenters.GaussianBlur(sigma=(0.0, 5.0)),
