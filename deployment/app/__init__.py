@@ -20,7 +20,20 @@ if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
 # Configure the Mask R-CNN model
-CLASS_NAMES = ["BG", "kangaroo"]
+# CLASS_NAMES = ["BG", "kangaroo"]
+CLASS_NAMES = [
+    "BG",
+    "airplane",
+    "ship",
+    "storage tank",
+    "baseball diamond",
+    "tennis court",
+    "basketball court",
+    "ground track field",
+    "harbor",
+    "bridge",
+    "vehicle",
+]
 
 
 class SimpleConfig(mrcnn.config.Config):
@@ -36,7 +49,12 @@ model = mrcnn.model.MaskRCNN(
 )
 
 # Load the weights into the model
-model.load_weights(filepath="../Kangaro_mask_rcnn_trained.h5", by_name=True)
+# model.load_weights(filepath="../Kangaro_mask_rcnn_trained.h5", by_name=True)
+# model.load_weights(filepath="../remote_sensing_mask_rcnn_trained_nay.h5", by_name=True)
+model.load_weights(
+    filepath="../remote_sensing_cfg20240505T1512/mask_rcnn_remote_sensing_cfg_0001.h5",
+    by_name=True,
+)
 
 
 # Route to serve the index.html template

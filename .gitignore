@@ -5,6 +5,8 @@ logs/
 results/
 temp/
 test/
+
+remote_sensing_cfg*/
 rs_model/
 
 # Byte-compiled / optimized / DLL files

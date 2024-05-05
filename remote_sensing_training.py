@@ -1,6 +1,7 @@
 import os
 import xml.etree
 from numpy import zeros, asarray
+import imgaug
 
 import mrcnn.utils
 import mrcnn.config
@@ -145,12 +146,12 @@ remote_sensing_config = RemoteSensingConfig()
 remote_sensing_config.display()
 
 # Save Logs
-ROOT_DIR = os.path.abspath("./")
-DEFAULT_LOGS_DIRS = os.path.join(ROOT_DIR, "logs")
+# ROOT_DIR = os.path.abspath("./")
+# DEFAULT_LOGS_DIRS = os.path.join(ROOT_DIR, "logs")
 
 # Build the Mask R-CNN Model Architecture
 model = mrcnn.model.MaskRCNN(
-    mode="training", model_dir="./rs_model", config=remote_sensing_config
+    mode="training", model_dir="./", config=remote_sensing_config
 )
 
 model.load_weights(
@@ -163,8 +164,21 @@ model.train(
     train_dataset=train_dataset,
     val_dataset=validation_dataset,
     learning_rate=remote_sensing_config.LEARNING_RATE,
-    epochs=10,
+    epochs=20,
     layers="heads",
+    # augmentation=imgaug.augmenters.Fliplr(0.5),
+    augmentation=imgaug.augmenters.Sometimes(
+        0.30,
+        [
+            imgaug.augmenters.Fliplr(0.4),
+            imgaug.augmenters.Flipud(0.3),
+            imgaug.augmenters.Affine(rotate=(-45, 45)),
+            imgaug.augmenters.Affine(scale=(0.5, 1.5)),
+            imgaug.augmenters.Affine(translate_percent=(-0.2, 0.2)),
+            # imgaug.augmenters.Affine(shear=(-16, 16)),
+            # imgaug.augmenters.GaussianBlur(sigma=(0.0, 5.0)),
+        ],
+    ),
 )
 
 model_path = "remote_sensing_mask_rcnn_trained.h5"

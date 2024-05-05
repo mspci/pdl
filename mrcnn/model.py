@@ -2686,7 +2686,7 @@ class MaskRCNN:
                 write_images=False,
             ),
             keras.callbacks.ModelCheckpoint(
-                self.checkpoint_path, verbose=0, save_weights_only=True
+                self.checkpoint_path, verbose=1, save_weights_only=True
             ),
         ]
 
