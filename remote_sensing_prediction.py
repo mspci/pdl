@@ -38,7 +38,10 @@ class PredictionConfig(mrcnn.config.Config):
 # Initialize the Mask R-CNN model for inference and then load the weights.
 # This step builds the Keras model architecture.
 model = mrcnn.model.MaskRCNN(
-    mode="inference", config=PredictionConfig(), model_dir=os.getcwd()
+    # mode="inference", config=PredictionConfig(), model_dir=os.getcwd()
+    mode="inference",
+    config=PredictionConfig(),
+    model_dir="./rs_model",
 )
 
 # Load the weights into the model.

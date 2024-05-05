@@ -144,12 +144,13 @@ print("Test: %d" % len(validation_dataset.image_ids))
 remote_sensing_config = RemoteSensingConfig()
 remote_sensing_config.display()
 
-# ROOT_DIR = os.path.abspath("./")
-# DEFAULT_LOGS_DIRS = os.path.join(ROOT_DIR, "logs")
+# Save Logs
+ROOT_DIR = os.path.abspath("./")
+DEFAULT_LOGS_DIRS = os.path.join(ROOT_DIR, "logs")
 
 # Build the Mask R-CNN Model Architecture
 model = mrcnn.model.MaskRCNN(
-    mode="training", model_dir="./", config=remote_sensing_config
+    mode="training", model_dir="./rs_model", config=remote_sensing_config
 )
 
 model.load_weights(

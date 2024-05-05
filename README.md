@@ -47,6 +47,16 @@
     pip install protobuf
     ```
 
+8. **Optional for GPU Acceleration:** Install CUDA Toolkit from NVIDIA for GPU acceleration:
+
+    Download and install the CUDA Toolkit appropriate for your system from [NVIDIA's CUDA Downloads](https://developer.nvidia.com/cuda-toolkit).
+
+## Download Pre-trained Weights:
+
+Download the pre-trained weights from the following link and place them in the `pdl` directory:
+
+[Download Pre-trained Weights](https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5)
+
 ## Training the Program:
 
 To perform training, navigate to the repository directory 'pdl' in the terminal and run the following command:

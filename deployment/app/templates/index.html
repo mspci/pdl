@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mask R-CNN Object Detection</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <script>
+      // Function to display the uploaded image
+      function displayInputImage(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            document.getElementById("inputImage").src = e.target.result;
+          };
+
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Mask R-CNN Object Detection</h1>
+      <form
+        id="uploadForm"
+        action="/upload"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <label for="fileInput">Upload Image:</label>
+        <input
+          type="file"
+          id="fileInput"
+          name="fileInput"
+          accept=".jpg, .jpeg, .png"
+          onchange="displayInputImage(this)"
+        />
+        <button type="submit">Detect Objects</button>
+      </form>
+
+      <h2>Input Image:</h2>
+      <img id="inputImage" src="#" alt="Input Image" width="400" />
+
+      {% if output_image %}
+      <h2>Output Image:</h2>
+      <img
+        id="outputImage"
+        src="{{ output_image }}"
+        alt="Output Image"
+        width="400"
+      />
+      {% endif %}
+    </div>
+  </body>
+</html>
