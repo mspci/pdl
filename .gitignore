@@ -5,6 +5,7 @@ logs/
 results/
 temp/
 test/
+rs_model/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
