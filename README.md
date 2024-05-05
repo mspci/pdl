@@ -2,7 +2,7 @@
 
 ## Setup Steps:
 
-1. Open a conda terminal.
+1. Open an **Anaconda prompt**.
 
 2. Navigate to the desired directory (e.g., desktop or any other location):
 

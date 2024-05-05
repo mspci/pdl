@@ -163,7 +163,7 @@ model.train(
     train_dataset=train_dataset,
     val_dataset=validation_dataset,
     learning_rate=remote_sensing_config.LEARNING_RATE,
-    epochs=1,
+    epochs=10,
     layers="heads",
 )
 
