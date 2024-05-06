@@ -4,10 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mask R-CNN Object Detection</title>
+    <!-- Link Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css') }}"
     />
+    <!-- Link Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-ZysmgUoHpL+aa+anF3nqtlOQpI5EIKjA2QkWSLfqtp9A+gkZnFpl0mOjgt6ZZwz3R2rj2swYS8cFZzznW3jblQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      /* Custom styles */
+      body {
+        background-color: #f8f9fa; /* Couleur de fond */
+      }
+      .container {
+        background-color: #fff; /* Couleur de fond du conteneur */
+        border-radius: 15px;
+        padding: 30px;
+        margin-top: 50px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Ombre légère */
+      }
+      .custom-btn {
+        background-color: #007bff; /* Couleur de fond du bouton */
+        border-color: #007bff; /* Couleur de bordure du bouton */
+      }
+      .custom-btn:hover {
+        background-color: #0056b3; /* Couleur de fond du bouton au survol */
+        border-color: #0056b3; /* Couleur de bordure du bouton au survol */
+      }
+      .header {
+        background-color: #343a40; /* Couleur de fond de l'en-tête */
+        padding: 20px 0;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Ombre légère */
+      }
+      .header h1 {
+        color: #fff; /* Couleur du texte de l'en-tête */
+        text-align: center;
+      }
+    </style>
     <script>
       // Function to display the uploaded image
       function displayInputImage(input) {
@@ -21,40 +68,91 @@
           reader.readAsDataURL(input.files[0]);
         }
       }
+
+      // Function to submit the form and update the output image
+      function submitForm() {
+        var form = document.getElementById("uploadForm");
+        var formData = new FormData(form);
+
+        fetch("/upload", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("outputImage").src = data.output_image;
+          })
+          .catch((error) => console.error("Error:", error));
+      }
     </script>
   </head>
   <body>
     <div class="container">
-      <h1>Mask R-CNN Object Detection</h1>
-      <form
-        id="uploadForm"
-        action="/upload"
-        method="post"
-        enctype="multipart/form-data"
-      >
-        <label for="fileInput">Upload Image:</label>
-        <input
-          type="file"
-          id="fileInput"
-          name="fileInput"
-          accept=".jpg, .jpeg, .png"
-          onchange="displayInputImage(this)"
-        />
-        <button type="submit">Detect Objects</button>
+      <div class="header">
+        <h1>Mask R-CNN Object Detection</h1>
+      </div>
+      <form id="uploadForm" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="fileInput"
+            ><i class="fas fa-camera"></i> Upload Image:</label
+          >
+          <input
+            type="file"
+            class="form-control-file"
+            id="fileInput"
+            name="fileInput"
+            accept=".jpg, .jpeg, .png"
+            onchange="displayInputImage(this)"
+          />
+        </div>
+        <div class="form-group">
+          <label for="youtubeInput"
+            ><i class="fab fa-youtube"></i> YouTube Video URL:</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="youtubeInput"
+            name="youtubeInput"
+            placeholder="Enter YouTube video URL"
+          />
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary custom-btn btn-block"
+          onclick="submitForm()"
+        >
+          <i class="fas fa-search"></i> Detect Objects
+        </button>
       </form>
 
-      <h2>Input Image:</h2>
-      <img id="inputImage" src="#" alt="Input Image" width="400" />
+      <h2 class="mt-4">Input Image:</h2>
+      <div class="text-center">
+        <img
+          id="inputImage"
+          src="#"
+          alt="Input Image"
+          class="img-fluid rounded"
+          style="max-width: 100%; max-height: 400px"
+        />
+      </div>
 
-      {% if output_image %}
-      <h2>Output Image:</h2>
-      <img
-        id="outputImage"
-        src="{{ output_image }}"
-        alt="Output Image"
-        width="400"
-      />
-      {% endif %}
+      <h2 class="mt-4">Output Image:</h2>
+      <div class="text-center">
+        <img
+          id="outputImage"
+          src="#"
+          alt="Output Image"
+          class="img-fluid rounded"
+          style="max-width: 100%; max-height: 400px"
+        />
+      </div>
     </div>
+    <!-- Link Bootstrap JS -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

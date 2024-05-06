@@ -41,12 +41,6 @@
     conda install protobuf
     ```
    
-   or
-   
-    ```bash
-    pip install protobuf
-    ```
-
 8. **Optional for GPU Acceleration:** Install CUDA Toolkit from NVIDIA for GPU acceleration:
 
     Download and install the CUDA Toolkit appropriate for your system from [NVIDIA's CUDA Downloads](https://developer.nvidia.com/cuda-toolkit).

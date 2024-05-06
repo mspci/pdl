@@ -52,7 +52,7 @@ model = mrcnn.model.MaskRCNN(
 # model.load_weights(filepath="../Kangaro_mask_rcnn_trained.h5", by_name=True)
 # model.load_weights(filepath="../remote_sensing_mask_rcnn_trained_nay.h5", by_name=True)
 model.load_weights(
-    filepath="../remote_sensing_cfg20240505T1512/mask_rcnn_remote_sensing_cfg_0001.h5",
+    filepath="../sat_mask_rcnn_trained20.h5",
     by_name=True,
 )
 
@@ -94,8 +94,8 @@ def upload():
         r = results[0]
 
         # Check if any objects were detected
-        if r["rois"].shape[0] == 0:
-            return "No objects detected in the image. Please try again with a different image."
+        # if r["rois"].shape[0] == 0:
+        #     return "No objects detected in the image. Please try again with a different image."
 
         # Render the detected objects on the image
         output_image = mrcnn.visualize.display_instances(
