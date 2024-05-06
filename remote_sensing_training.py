@@ -167,18 +167,18 @@ model.train(
     epochs=20,
     layers="heads",
     # augmentation=imgaug.augmenters.Fliplr(0.5),
-    augmentation=imgaug.augmenters.Sometimes(
-        0.30,
-        [
-            imgaug.augmenters.Fliplr(0.4),
-            imgaug.augmenters.Flipud(0.3),
-            imgaug.augmenters.Affine(rotate=(-45, 45)),
-            # imgaug.augmenters.Affine(scale=(0.5, 1.5)),
-            imgaug.augmenters.Affine(translate_percent=(-0.2, 0.2)),
-            # imgaug.augmenters.Affine(shear=(-16, 16)),
-            # imgaug.augmenters.GaussianBlur(sigma=(0.0, 5.0)),
-        ],
-    ),
+    # augmentation=imgaug.augmenters.Sometimes(
+    #     0.30,
+    #     [
+    #         imgaug.augmenters.Fliplr(0.4),
+    #         imgaug.augmenters.Flipud(0.3),
+    #         imgaug.augmenters.Affine(rotate=(-45, 45)),
+    #         # imgaug.augmenters.Affine(scale=(0.5, 1.5)),
+    #         imgaug.augmenters.Affine(translate_percent=(-0.2, 0.2)),
+    #         # imgaug.augmenters.Affine(shear=(-16, 16)),
+    #         # imgaug.augmenters.GaussianBlur(sigma=(0.0, 5.0)),
+    #     ],
+    # ),
 )
 
 model_path = "remote_sensing_mask_rcnn_trained.h5"
