@@ -38,7 +38,7 @@
 7. Install protobuf using either conda or pip:
 
     ```bash
-    conda install protobuf
+    pip install protobuf flask
     ```
    
 8. **Optional for GPU Acceleration:** Install CUDA Toolkit from NVIDIA for GPU acceleration:
@@ -47,9 +47,10 @@
 
 ## Download Pre-trained Weights:
 
-Download the pre-trained weights from the following link and place them in the `pdl` directory:
+Download the pre-trained weights from the following links and place them in the `pdl` directory:
 
-[Download Pre-trained Weights](https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5)
+[mask_rcnn_coco.h5](https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5)
+[mrcnn_trained_20e_sgd_sans_aug.h5](https://drive.google.com/file/d/1X0380I_UO698ObveUVPGwfmhKi_7keES/view?usp=sharing)
 
 ## Training the Model:
 
