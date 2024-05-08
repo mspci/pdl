@@ -52,7 +52,7 @@ model = mrcnn.model.MaskRCNN(
 # model.load_weights(filepath="../Kangaro_mask_rcnn_trained.h5", by_name=True)
 # model.load_weights(filepath="../remote_sensing_mask_rcnn_trained_nay.h5", by_name=True)
 model.load_weights(
-    filepath="../sat_mask_rcnn_trained20.h5",
+    filepath="../mrcnn_trained_20e_sgd_sans_aug.h5",
     by_name=True,
 )
 

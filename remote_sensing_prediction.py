@@ -46,7 +46,7 @@ model = mrcnn.model.MaskRCNN(
 )
 
 # Load the weights into the model.
-model.load_weights(filepath="remote_sensing_mask_rcnn_trained.h5", by_name=True)
+model.load_weights(filepath="mrcnn_trained_20e_sgd_sans_aug.h5", by_name=True)
 
 # load the input image, convert it from BGR to RGB channel
 image = cv2.imread("./images_test/353.jpg")
